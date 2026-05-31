@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر النخبة | Elite Store - المتجر الإلكتروني الأفضل</title>
+    <meta name="description" content="متجر النخبة - أفضل متجر إلكتروني للتسوق في الشرق الأوسط. منتجات عالية الجودة بأفضل الأسعار.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+    <!-- ملفات CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span><i class="fas fa-truck"></i> توصيل مجاني للطلبات فوق 200 ريال</span>
+                <div class="top-bar-links">
+                    <a href="pages/login.html"><i class="fas fa-user"></i> حسابي</a>
+                    <a href="#" id="wishlistBtn"><i class="fas fa-heart"></i> المفضلة <span class="wishlist-count" id="wishlistCount">0</span></a>
+                    <a href="#"><i class="fas fa-phone"></i> اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر الرئيسي -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-crown"></i>
+                        <div class="logo-text">
+                            <span class="logo-title">النخبة</span>
+                            <span class="logo-subtitle">Elite Store</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="ابحث عن المنتجات..." id="searchInput">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="icon-btn" id="wishlistIcon" title="المفضلة">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge wishlist-count" id="wishlistBadge">0</span>
+                    </button>
+                    <button class="icon-btn cart-btn" id="cartBtn" title="سلة التسوق">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge cart-count" id="cartCount">0</span>
+                    </button>
+                    <div class="user-menu" id="userMenu">
+                        <button class="icon-btn" id="userMenuBtn">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info" id="userInfo">
+                                <a href="pages/login.html">تسجيل الدخول</a>
+                            </div>
+                            <div class="user-links">
+                                <a href="pages/login.html"><i class="fas fa-sign-in-alt"></i> دخول</a>
+                                <a href="pages/register.html"><i class="fas fa-user-plus"></i> تسجيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- القائمة الرئيسية -->
+        <nav class="main-nav" id="mainNav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li class="dropdown">
+                        <a href="#">الفئات <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="category-link" data-category="men-fashion">ملابس رجالية</a></li>
+                            <li><a href="#" class="category-link" data-category="women-fashion">ملابس نسائية</a></li>
+                            <li><a href="#" class="category-link" data-category="electronics">إلكترونيات</a></li>
+                            <li><a href="#" class="category-link" data-category="accessories">إكسسوارات</a></li>
+                            <li><a href="#" class="category-link" data-category="home">منزل ومطبخ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#deals">العروض</a></li>
+                    <li><a href="#">العلامات التجارية</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- قسم البانر الرئيسي -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="swiper hero-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hero-slide slide-1">
+                            <div class="hero-content">
+                                <span class="hero-badge">عرض الموسم</span>
+                                <h2>خصم يصل إلى 50%</h2>
+                                <p>على أحدث المنتجات العصرية</p>
+                                <a href="#products" class="btn-primary">تسوق الآن <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            <div class="hero-image">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-slide slide-2">
+                            <div class="hero-content">
+                                <span class="hero-badge">توصيل مجاني</span>
+                                <h2>توصيل سريع</h2>
+                                <p>نوصل طلبك خلال 24 ساعة</p>
+                                <a href="#products" class="btn-primary">اكتشف المزيد <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            <div class="hero-image">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-slide slide-3">
+                            <div class="hero-content">
+                                <span class="hero-badge">ضمان الجودة</span>
+                                <h2>منتجات أصلية</h2>
+                                <p>جميع منتجاتنا مضمونة 100%</p>
+                                <a href="#products" class="btn-primary">تصفح المنتجات <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            <div class="hero-image">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h4>توصيل سريع</h4>
+                    <p>توصيل خلال 24-48 ساعة لجميع المدن</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h4>إرجاع مجاني</h4>
+                    <p>سياسة إرجاع مرنة خلال 14 يوم</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>دفع آمن</h4>
+                    <p>طرق دفع مشفرة وآمنة 100%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>دعم فني</h4>
+                    <p>خدمة عملاء على مدار الساعة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">منتجاتنا المميزة</h2>
+                <p class="section-subtitle">اكتشف أفضل المنتجات المختارة بعناية لك</p>
+            </div>
+            
+            <!-- أزرار التصفية -->
+            <div class="filter-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">الكل</button>
+                    <button class="filter-btn" data-category="electronics">إلكترونيات</button>
+                    <button class="filter-btn" data-category="men-fashion">رجالي</button>
+                    <button class="filter-btn" data-category="women-fashion">نسائي</button>
+                    <button class="filter-btn" data-category="accessories">إكسسوارات</button>
+                </div>
+                <div class="sort-select">
+                    <select id="sortSelect">
+                        <option value="default">ترتيب حسب</option>
+                        <option value="price-asc">السعر: من الأقل إلى الأعلى</option>
+                        <option value="price-desc">السعر: من الأعلى إلى الأقل</option>
+                        <option value="rating">الأعلى تقييماً</option>
+                        <option value="newest">الأحدث</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- شبكة المنتجات -->
+            <div class="products-grid" id="productsGrid">
+                <!-- المنتجات ستضاف ديناميكياً -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>جاري تحميل المنتجات...</p>
+                </div>
+            </div>
+            
+            <!-- زر تحميل المزيد -->
+            <div class="load-more-container">
+                <button class="btn-load-more" id="loadMoreBtn">
+                    <i class="fas fa-sync-alt"></i> تحميل المزيد
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم العروض الخاصة -->
+    <section class="deals-section" id="deals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">عروض خاصة</h2>
+                <p class="section-subtitle">عروض محدودة الوقت - لا تفوت الفرصة!</p>
+            </div>
+            <div class="deals-grid">
+                <div class="deal-card deal-1">
+                    <div class="deal-badge">خصم 40%</div>
+                    <div class="deal-content">
+                        <i class="fas fa-mobile-alt deal-icon"></i>
+                        <h3>هواتف ذكية</h3>
+                        <p>أفضل العروض على أحدث الهواتف</p>
+                        <a href="#" class="btn-deal">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="deal-card deal-2">
+                    <div class="deal-badge">خصم 30%</div>
+                    <div class="deal-content">
+                        <i class="fas fa-tshirt deal-icon"></i>
+                        <h3>ملابس عصرية</h3>
+                        <p>أحدث صيحات الموضة العالمية</p>
+                        <a href="#" class="btn-deal">تسوق الآن</a>
+                    </div>
+                </div>
+                <div class="deal-card deal-3">
+                    <div class="deal-badge">خصم 25%</div>
+                    <div class="deal-content">
+                        <i class="fas fa-watch deal-icon"></i>
+                        <h3>ساعات فاخرة</h3>
+                        <p>ساعات أصلية بأسعار مميزة</p>
+                        <a href="#" class="btn-deal">تسوق الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التقييمات -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آراء العملاء</h2>
+                <p class="section-subtitle">ماذا يقول عملاؤنا عنا</p>
+            </div>
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"متجر رائع! منتجات عالية الجودة وتوصيل سريع. أنصح الجميع بالتعامل معه."</p>
+                            <div class="testimonial-author">
+                                <img src="https://i.pravatar.cc/60?img=1" alt="أحمد محمد">
+                                <div>
+                                    <h4>أحمد محمد</h4>
+                                    <span>الرياض</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"خدمة عملاء ممتازة وسياسة إرجاع مرنة. شكراً متجر النخبة!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://i.pravatar.cc/60?img=5" alt="سارة عبدالله">
+                                <div>
+                                    <h4>سارة عبدالله</h4>
+                                    <span>جدة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- النشرة البريدية -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>اشترك في النشرة البريدية</h3>
+                    <p>احصل على آخر العروض والتخفيضات أولاً بأول</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة السلة المنبثقة -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> سلة التسوق</h3>
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- عناصر السلة -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <!-- ملخص السلة -->
+        </div>
+    </div>
+
+    <!-- نافذة المفضلة -->
+    <div class="wishlist-overlay" id="wishlistOverlay"></div>
+    <div class="wishlist-modal" id="wishlistModal">
+        <div class="wishlist-header">
+            <h3><i class="fas fa-heart"></i> المفضلة</h3>
+            <button class="close-btn" id="closeWishlistBtn">&times;</button>
+        </div>
+        <div class="wishlist-body" id="wishlistBody">
+            <!-- عناصر المفضلة -->
+        </div>
+    </div>
+
+    <!-- إشعار -->
+    <div class="notification" id="notification"></div>
+
+    <!-- التذييل -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-crown"></i>
+                        <span>النخبة</span>
+                    </div>
+                    <p>أفضل متجر إلكتروني للتسوق في الشرق الأوسط. نوفر لكم منتجات عالية الجودة بأفضل الأسعار.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                        <li><i class="fas fa-phone"></i> +966 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@elitestore.com</li>
+                        <li><i class="fas fa-clock"></i> ساعات العمل: 9 صباحاً - 10 مساءً</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>طرق الدفع</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h4 style="margin-top: 20px;">تطبيق الجوال</h4>
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 متجر النخبة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
